@@ -20,7 +20,6 @@ func main() {
 	if err != nil {
 		log.Panic(err)
 	}
-	bot.Debug = true
 	msg := tgbotapi.NewMessage(CHAT_ID, message)
 	if _, err := bot.Send(msg); err != nil {
 		log.Panic(err)
