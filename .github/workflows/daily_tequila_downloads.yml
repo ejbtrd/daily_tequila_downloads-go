@@ -1,0 +1,21 @@
+name: daily_tequila_downloads
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  build:  
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Set up Go
+      uses: actions/setup-go@v3
+      with:
+        go-version: 1.20.1
+
+    - name: Run daily_tequila_downloads
+      run: |
+        go run main.go
